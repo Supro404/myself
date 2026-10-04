@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Supravat Dey | CV</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+
+                    colors: {
+                        cool: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+
+    <style>
+
+        /* =========================================================
+           GENERAL
+        ========================================================= */
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f8fafc;
+            color: #334155;
+        }
+
+
+        /* =========================================================
+           CUSTOM SCROLLBAR
+        ========================================================= */
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #ede9fe;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #a78bfa;
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #8b5cf6;
+        }
+
+
+        /* =========================================================
+           GLASS NAVIGATION
+        ========================================================= */
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.90);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+        }
+
+
+        /* =========================================================
+           VIOLET SIDE-BACKGROUND SECTIONS
+           
+           White center with soft violet on both left and right
+           sides.
+        ========================================================= */
+
+        .violet-side-section {
+            background:
+                linear-gradient(
+                    90deg,
+                    #ddd6fe 0%,
+                    #ede9fe 10%,
+                    #f5f3ff 18%,
+                    #ffffff 32%,
+                    #ffffff 68%,
+                    #f5f3ff 82%,
+                    #ede9fe 90%,
+                    #ddd6fe 100%
+                );
+        }
+
+
+        /* =========================================================
+           IMAGE BACKGROUND CARD
+        ========================================================= */
+
+        .image-bg-card {
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
+
+            background-size: cover;
+            background-repeat: no-repeat;
+
+            border-radius: 26px;
+
+            border: 2px solid rgba(255, 255, 255, 0.55);
+
+            box-shadow:
+                0 25px 60px rgba(76, 29, 149, 0.18);
+
+            color: #f8fafc;
+
+            transition:
+                transform 0.35s ease,
+                box-shadow 0.35s ease;
+        }
+
+
+        .image-bg-card:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 30px 70px rgba(76, 29, 149, 0.25);
+        }
+
+
+        /* =========================================================
+           VERY LIGHT IMAGE OVERLAY
+           
+           Keeps the Messi image highly visible.
+        ========================================================= */
+
+        .image-bg-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(15, 23, 42, 0.28) 0%,
+                    rgba(15, 23, 42, 0.12) 50%,
+                    rgba(15, 23, 42, 0.28) 100%
+                );
+
+            z-index: -1;
+        }
+
+
+        /* =========================================================
+           SUBTLE BOTTOM GRADIENT
+           
+           Helps text readability without creating a visible box.
+        ========================================================= */
+
+        .image-bg-card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    transparent 35%,
+                    rgba(15, 23, 42, 0.18) 100%
+                );
+
+            z-index: -1;
+
+            pointer-events: none;
+        }
+
+
+        /* =========================================================
+           FIVE MESSI IMAGES
+        ========================================================= */
+
+        .bg-home {
+            background-image: url("1.jpg");
+            background-position: center center;
+        }
+
+        .bg-about {
+            background-image: url("4.jpeg");
+            background-position: center center;
+        }
+
+        .bg-education {
+            background-image: url("3.jpeg");
+            background-position: center center;
+        }
+
+        .bg-achievements {
+            background-image: url("2.jpeg");
+            background-position: center center;
+        }
+
+        .bg-career {
+            background-image: url("5.jpg");
+            background-position: center center;
+        }
+
+
+        /* =========================================================
+           DIRECT TEXT OVER IMAGE
+           
+           No text boxes / no rectangular backgrounds.
+        ========================================================= */
+
+        .direct-image-text {
+            text-shadow:
+                0 2px 5px rgba(0, 0, 0, 0.75),
+                0 4px 14px rgba(0, 0, 0, 0.45);
+        }
+
+
+        .direct-image-heading {
+            text-shadow:
+                0 3px 8px rgba(0, 0, 0, 0.85),
+                0 6px 20px rgba(0, 0, 0, 0.45);
+        }
+
+
+        /* =========================================================
+           ACHIEVEMENT ITEMS
+           
+           No solid boxes. Just subtle separation.
+        ========================================================= */
+
+        .achievement-row {
+            background: rgba(15, 23, 42, 0.16);
+
+            border: 1px solid rgba(255, 255, 255, 0.14);
+
+            border-radius: 16px;
+
+            transition:
+                background 0.3s ease,
+                transform 0.3s ease;
+        }
+
+        .achievement-row:hover {
+            background: rgba(15, 23, 42, 0.28);
+            transform: translateX(5px);
+        }
+
+
+        /* =========================================================
+           EDUCATION CARDS
+           
+           Kept translucent because education has more information.
+        ========================================================= */
+
+        .education-item {
+            background: rgba(15, 23, 42, 0.22);
+
+            border: 1px solid rgba(255, 255, 255, 0.20);
+
+            border-radius: 20px;
+
+            transition:
+                background 0.3s ease,
+                transform 0.3s ease;
+        }
+
+        .education-item:hover {
+            background: rgba(15, 23, 42, 0.34);
+            transform: translateY(-4px);
+        }
+
+
+        /* =========================================================
+           ICON CIRCLES
+        ========================================================= */
+
+        .soft-icon {
+            box-shadow:
+                0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+
+
+        /* =========================================================
+           PROFILE PHOTO
+        ========================================================= */
+
+        .profile-image {
+            box-shadow:
+                0 20px 50px rgba(0, 0, 0, 0.35);
+        }
+
+
+        /* =========================================================
+           SECTION TITLE
+        ========================================================= */
+
+        .section-title-line {
+            position: absolute;
+
+            bottom: 0;
+            left: 50%;
+
+            width: 48px;
+            height: 4px;
+
+            background: #0ea5e9;
+
+            transform:
+                translateX(-50%)
+                translateY(12px);
+
+            border-radius: 999px;
+        }
+
+
+        /* =========================================================
+           CARD HEIGHTS
+        ========================================================= */
+
+        .home-card {
+            min-height: 650px;
+        }
+
+        .about-card {
+            min-height: 340px;
+        }
+
+        .education-card {
+            min-height: 520px;
+        }
+
+        .achievements-card {
+            min-height: 500px;
+        }
+
+        .career-card {
+            min-height: 500px;
+        }
+
+
+        /* =========================================================
+           MOBILE
+        ========================================================= */
+
+        @media (max-width: 768px) {
+
+            .home-card {
+                min-height: auto;
+            }
+
+            .about-card {
+                min-height: 320px;
+            }
+
+            .education-card {
+                min-height: auto;
+            }
+
+            .achievements-card {
+                min-height: auto;
+            }
+
+            .career-card {
+                min-height: auto;
+            }
+
+            .violet-side-section {
+                background:
+                    linear-gradient(
+                        180deg,
+                        #ede9fe 0%,
+                        #f5f3ff 12%,
+                        #ffffff 25%,
+                        #ffffff 75%,
+                        #f5f3ff 88%,
+                        #ede9fe 100%
+                    );
+            }
+
+            .image-bg-card::before {
+                background:
+                    linear-gradient(
+                        90deg,
+                        rgba(15, 23, 42, 0.34),
+                        rgba(15, 23, 42, 0.15),
+                        rgba(15, 23, 42, 0.34)
+                    );
+            }
+
+            .achievement-row {
+                background: rgba(15, 23, 42, 0.25);
+            }
+
+            .education-item {
+                background: rgba(15, 23, 42, 0.28);
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body class="antialiased selection:bg-violet-500 selection:text-white">
+
+
+    <!-- =========================================================
+         HEADER
+    ========================================================== -->
+
+    <header class="fixed w-full top-0 z-50 glass-nav transition-all duration-300">
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="flex justify-between items-center h-16">
+
+
+                <!-- Logo -->
+
+                <div class="flex-shrink-0 flex items-center">
+
+                    <a href="#home"
+                       class="text-xl font-bold text-cool-900 tracking-tight">
+
+                        SD.
+
+                    </a>
+
+                </div>
+
+
+                <!-- Desktop Navigation -->
+
+                <nav class="hidden md:flex space-x-8">
+
+                    <a href="#home"
+                       class="text-slate-600 hover:text-cool-600 px-3 py-2 text-sm font-medium transition-colors">
+                        Home
+                    </a>
+
+                    <a href="#about"
+                       class="text-slate-600 hover:text-cool-600 px-3 py-2 text-sm font-medium transition-colors">
+                        About Me
+                    </a>
+
+                    <a href="#education"
+                       class="text-slate-600 hover:text-cool-600 px-3 py-2 text-sm font-medium transition-colors">
+                        Education
+                    </a>
+
+                    <a href="#achievements"
+                       class="text-slate-600 hover:text-cool-600 px-3 py-2 text-sm font-medium transition-colors">
+                        Achievements
+                    </a>
+
+                    <a href="#career"
+                       class="text-slate-600 hover:text-cool-600 px-3 py-2 text-sm font-medium transition-colors">
+                        Career Focus
+                    </a>
+
+                    <a href="#contact"
+                       class="text-slate-600 hover:text-cool-600 px-3 py-2 text-sm font-medium transition-colors">
+                        Contact
+                    </a>
+
+                </nav>
+
+
+                <!-- Mobile Menu Button -->
+
+                <div class="md:hidden flex items-center">
+
+                    <button id="mobile-menu-btn"
+                            class="text-slate-600 hover:text-cool-600 focus:outline-none p-2"
+                            aria-label="Open mobile menu">
+
+                        <i class="fas fa-bars text-xl"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Mobile Navigation -->
+
+        <div id="mobile-menu"
+             class="hidden md:hidden bg-white border-t border-slate-200 shadow-lg absolute w-full">
+
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+
+                <a href="#home"
+                   class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-cool-600 hover:bg-cool-50">
+                    Home
+                </a>
+
+                <a href="#about"
+                   class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-cool-600 hover:bg-cool-50">
+                    About Me
+                </a>
+
+                <a href="#education"
+                   class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-cool-600 hover:bg-cool-50">
+                    Education
+                </a>
+
+                <a href="#achievements"
+                   class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-cool-600 hover:bg-cool-50">
+                    Achievements
+                </a>
+
+                <a href="#career"
+                   class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-cool-600 hover:bg-cool-50">
+                    Career Focus
+                </a>
+
+                <a href="#contact"
+                   class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-cool-600 hover:bg-cool-50">
+                    Contact
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <main class="pt-16">
+
+
+        <!-- =====================================================
+             HOME
+        ====================================================== -->
+
+        <section id="home"
+                 class="relative py-16 md:py-24 violet-side-section px-4 overflow-hidden">
+
+            <div class="max-w-5xl mx-auto">
+
+                <div class="image-bg-card bg-home home-card p-6 sm:p-10 md:p-14 flex items-center justify-center">
+
+
+                    <div class="w-full text-center direct-image-text">
+
+
+                        <!-- Profile Image -->
+
+                        <div class="mb-8 relative group flex justify-center">
+
+                            <div class="absolute -inset-1 bg-gradient-to-r from-cool-400 to-teal-400 rounded-2xl blur opacity-30">
+                            </div>
+
+                            <img src="B1LE0584.jpg"
+                                 alt="Supravat Dey"
+                                 class="profile-image relative w-full max-w-2xl h-auto object-cover rounded-2xl border-4 border-white transition-transform duration-300 hover:scale-[1.02]">
+
+                        </div>
+
+
+                        <!-- Name -->
+
+                        <h1 class="direct-image-heading text-4xl md:text-6xl font-extrabold tracking-tight mb-5 text-white">
+
+                            Hi, I'm
+
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-200 to-teal-200">
+
+                                Supravat Dey
+
+                            </span>
+
+                        </h1>
+
+
+                        <!-- Subtitle -->
+
+                        <h2 class="direct-image-text text-xl md:text-2xl font-medium text-slate-100 mb-8 max-w-2xl mx-auto leading-relaxed">
+
+                            Computer Science Engineering Graduate
+
+                            <br class="md:hidden">
+
+                            <span class="hidden md:inline">|</span>
+
+                            <span class="text-cyan-200 font-semibold">
+
+                                RRB JE Aspirant
+
+                            </span>
+
+                        </h2>
+
+
+                        <!-- Buttons -->
+
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+
+                            <a href="#contact"
+                               class="px-8 py-3 rounded-full bg-cool-600 text-white font-medium hover:bg-cool-500 transition-all shadow-lg transform hover:-translate-y-0.5">
+
+                                Get In Touch
+
+                            </a>
+
+
+                            <a href="#about"
+                               class="px-8 py-3 rounded-full bg-white/15 border border-white/40 text-white font-medium hover:bg-white/25 transition-all shadow-sm transform hover:-translate-y-0.5">
+
+                                Learn More
+
+                            </a>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             ABOUT ME
+        ====================================================== -->
+
+        <section id="about"
+                 class="py-24 violet-side-section px-4">
+
+            <div class="max-w-4xl mx-auto">
+
+
+                <!-- Section Heading -->
+
+                <div class="text-center mb-16">
+
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 inline-block relative">
+
+                        About Me
+
+                        <span class="section-title-line"></span>
+
+                    </h2>
+
+                </div>
+
+
+                <!-- Messi Image -->
+
+                <div class="image-bg-card bg-about about-card p-8 md:p-14 flex items-center">
+
+
+                    <div class="w-full direct-image-text">
+
+
+                        <div class="text-5xl text-cyan-200/80 mb-6">
+
+                            <i class="fas fa-quote-left"></i>
+
+                        </div>
+
+
+                        <p class="text-lg md:text-xl text-white leading-relaxed font-medium">
+
+                            I am a Computer Science Engineering graduate from
+
+                            <strong>Jadavpur University</strong>
+
+                            with a Diploma in Mechanical Engineering from
+
+                            <strong>Birla Institute of Technology, Kolkata</strong>.
+
+                            I am currently preparing for RRB JE Electronics and actively pursuing opportunities in the engineering and technical field.
+
+                        </p>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             EDUCATION
+        ====================================================== -->
+
+        <section id="education"
+                 class="py-24 violet-side-section px-4">
+
+            <div class="max-w-5xl mx-auto">
+
+
+                <!-- Section Heading -->
+
+                <div class="text-center mb-16">
+
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 inline-block relative">
+
+                        Education
+
+                        <span class="section-title-line"></span>
+
+                    </h2>
+
+                </div>
+
+
+                <!-- Messi Image -->
+
+                <div class="image-bg-card bg-education education-card p-6 md:p-10">
+
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+
+                        <!-- Jadavpur University -->
+
+                        <div class="education-item p-8 direct-image-text">
+
+
+                            <div class="w-20 h-20 bg-white rounded-xl flex items-center justify-center mb-6 shadow-sm border border-slate-100 p-2 overflow-hidden">
+
+                                <img src="Julogo.jpg"
+                                     alt="Jadavpur University Logo"
+                                     class="w-full h-full object-contain">
+
+                            </div>
+
+
+                            <h3 class="text-xl font-bold text-white mb-2">
+
+                                Computer Science Engineering (BCSE)
+
+                            </h3>
+
+
+                            <p class="text-lg font-medium text-cyan-200 mb-5">
+
+                                Jadavpur University
+
+                            </p>
+
+
+                            <ul class="space-y-3 text-slate-100">
+
+
+                                <li class="flex items-start">
+
+                                    <i class="fas fa-map-marker-alt mt-1 mr-3 text-slate-300"></i>
+
+                                    <span>
+                                        Kolkata, West Bengal, India
+                                    </span>
+
+                                </li>
+
+
+                                <li class="flex items-start">
+
+                                    <i class="fas fa-check-circle mt-1 mr-3 text-teal-300"></i>
+
+                                    <span class="font-medium">
+                                        Status: Completed
+                                    </span>
+
+                                </li>
+
+
+                            </ul>
+
+                        </div>
+
+
+
+                        <!-- BIT -->
+
+                        <div class="education-item p-8 direct-image-text">
+
+
+                            <div class="w-20 h-20 bg-white rounded-xl flex items-center justify-center mb-6 shadow-sm border border-slate-100 p-2 overflow-hidden">
+
+                                <img src="bitkolkata.jpeg"
+                                     alt="BIT Kolkata Logo"
+                                     class="w-full h-full object-contain">
+
+                            </div>
+
+
+                            <h3 class="text-xl font-bold text-white mb-2">
+
+                                Diploma in Mechanical Engineering
+
+                            </h3>
+
+
+                            <p class="text-lg font-medium text-teal-200 mb-5">
+
+                                Birla Institute of Technology, Kolkata
+
+                            </p>
+
+
+                            <ul class="space-y-3 text-slate-100">
+
+
+                                <li class="flex items-start">
+
+                                    <i class="fas fa-map-marker-alt mt-1 mr-3 text-slate-300"></i>
+
+                                    <span>
+                                        Kolkata, West Bengal, India
+                                    </span>
+
+                                </li>
+
+
+                                <li class="flex items-start">
+
+                                    <i class="fas fa-check-circle mt-1 mr-3 text-teal-300"></i>
+
+                                    <span class="font-medium">
+                                        Status: Completed
+                                    </span>
+
+                                </li>
+
+
+                            </ul>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             ACHIEVEMENTS
+        ====================================================== -->
+
+        <section id="achievements"
+                 class="py-24 violet-side-section px-4">
+
+            <div class="max-w-5xl mx-auto">
+
+
+                <!-- Section Heading -->
+
+                <div class="text-center mb-16">
+
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 inline-block relative">
+
+                        Achievements
+
+                        <span class="section-title-line"></span>
+
+                    </h2>
+
+                </div>
+
+
+                <!-- Messi Image -->
+
+                <div class="image-bg-card bg-achievements achievements-card p-8 md:p-12">
+
+
+                    <div class="space-y-5 direct-image-text">
+
+
+                        <!-- Achievement 1 -->
+
+                        <div class="achievement-row p-5 md:p-6 flex items-center group">
+
+
+                            <div class="soft-icon flex-shrink-0 w-12 h-12 bg-yellow-400/25 rounded-full flex items-center justify-center mr-6 group-hover:rotate-12 transition-transform">
+
+                                <i class="fas fa-trophy text-yellow-200 text-xl"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <h3 class="text-lg md:text-xl font-semibold text-white">
+
+                                    4th position in Class 10
+
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- Achievement 2 -->
+
+                        <div class="achievement-row p-5 md:p-6 flex items-center group">
+
+
+                            <div class="soft-icon flex-shrink-0 w-12 h-12 bg-slate-300/25 rounded-full flex items-center justify-center mr-6 group-hover:rotate-12 transition-transform">
+
+                                <i class="fas fa-medal text-slate-100 text-xl"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <h3 class="text-lg md:text-xl font-semibold text-white">
+
+                                    3rd position in Diploma
+
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- Achievement 3 -->
+
+                        <div class="achievement-row p-5 md:p-6 flex items-center group">
+
+
+                            <div class="soft-icon flex-shrink-0 w-12 h-12 bg-blue-400/25 rounded-full flex items-center justify-center mr-6 group-hover:rotate-12 transition-transform">
+
+                                <i class="fas fa-star text-blue-200 text-xl"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <h3 class="text-lg md:text-xl font-semibold text-white">
+
+                                    WBJEE JELET Rank 7 across West Bengal
+
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             CAREER FOCUS
+        ====================================================== -->
+
+        <section id="career"
+                 class="py-24 violet-side-section px-4">
+
+
+            <div class="max-w-5xl mx-auto">
+
+
+                <!-- Section Heading -->
+
+                <div class="text-center mb-16">
+
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 inline-block relative">
+
+                        Career Focus
+
+                        <span class="section-title-line"></span>
+
+                    </h2>
+
+                </div>
+
+
+                <!-- Messi Image -->
+
+                <div class="image-bg-card bg-career career-card p-8 md:p-12">
+
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center direct-image-text">
+
+
+                        <!-- Focus Areas -->
+
+                        <div>
+
+
+                            <h3 class="text-2xl font-bold text-cyan-200 mb-6 flex items-center direct-image-heading">
+
+                                <i class="fas fa-bullseye mr-3"></i>
+
+                                Current Focus Areas
+
+                            </h3>
+
+
+                            <div class="space-y-5">
+
+
+                                <div class="achievement-row p-5 flex items-center shadow-lg">
+
+                                    <i class="fas fa-microchip text-cyan-200 text-2xl w-10"></i>
+
+                                    <span class="text-lg font-medium ml-3 text-white">
+
+                                        RRB JE Electronics
+
+                                    </span>
+
+                                </div>
+
+
+                                <div class="achievement-row p-5 flex items-center shadow-lg">
+
+                                    <i class="fas fa-train text-cyan-200 text-2xl w-10"></i>
+
+                                    <span class="text-lg font-medium ml-3 text-white">
+
+                                        RRB JE Recruitment
+
+                                    </span>
+
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- Career Goal -->
+
+                        <div>
+
+
+                            <i class="fas fa-rocket text-6xl text-cyan-200/35 mb-5"></i>
+
+
+                            <h3 class="text-2xl font-bold text-white mb-4 direct-image-heading">
+
+                                Career Goal
+
+                            </h3>
+
+
+                            <p class="text-slate-100 text-lg leading-relaxed">
+
+                                To build a robust career in the engineering and technical field, leveraging my dual background in Computer Science and Mechanical Engineering, with
+
+                                <strong>RRB JE Electronics</strong>
+
+                                currently being a major career target and milestone.
+
+                            </p>
+
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             CONTACT
+        ====================================================== -->
+
+        <section id="contact"
+                 class="py-24 bg-cool-50 px-4">
+
+
+            <div class="max-w-6xl mx-auto">
+
+
+                <!-- Heading -->
+
+                <div class="text-center mb-16">
+
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 inline-block relative">
+
+                        Contact Me
+
+                        <span class="section-title-line"></span>
+
+                    </h2>
+
+
+                    <p class="mt-6 text-slate-600 max-w-2xl mx-auto">
+
+                        Feel free to reach out for professional opportunities, queries regarding my preparations, or engineering discussions.
+
+                    </p>
+
+                </div>
+
+
+                <!-- Contact Cards -->
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+
+                    <!-- Location -->
+
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center text-center hover:-translate-y-1 transition-transform duration-300">
+
+                        <div class="w-16 h-16 bg-cool-100 text-cool-600 rounded-full flex items-center justify-center text-2xl mb-6">
+
+                            <i class="fas fa-map-marker-alt"></i>
+
+                        </div>
+
+
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">
+
+                            Location
+
+                        </h3>
+
+
+                        <p class="text-slate-600">
+
+                            South Sankrail Bidyut Sangha Maath,<br>
+                            Howrah, West Bengal, India
+
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- Email -->
+
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center text-center hover:-translate-y-1 transition-transform duration-300">
+
+                        <div class="w-16 h-16 bg-cool-100 text-cool-600 rounded-full flex items-center justify-center text-2xl mb-6">
+
+                            <i class="fas fa-envelope"></i>
+
+                        </div>
+
+
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">
+
+                            Email
+
+                        </h3>
+
+
+                        <a href="mailto:supravatdey.wm@gmail.com"
+                           class="text-cool-600 hover:text-cool-800 transition-colors font-medium break-all">
+
+                            supravatdey.wm@gmail.com
+
+                        </a>
+
+                    </div>
+
+
+
+                    <!-- Phone -->
+
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center text-center hover:-translate-y-1 transition-transform duration-300">
+
+                        <div class="w-16 h-16 bg-cool-100 text-cool-600 rounded-full flex items-center justify-center text-2xl mb-6">
+
+                            <i class="fas fa-phone-alt"></i>
+
+                        </div>
+
+
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">
+
+                            Phone
+
+                        </h3>
+
+
+                        <a href="tel:+916290592007"
+                           class="text-cool-600 hover:text-cool-800 transition-colors font-medium">
+
+                            +91 6290592007
+
+                        </a>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
+    <footer class="bg-slate-900 text-slate-400 py-8 text-center border-t border-slate-800">
+
+        <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+
+            <p class="mb-4 md:mb-0">
+
+                &copy;
+
+                <span id="year"></span>
+
+                Supravat Dey. All rights reserved.
+
+            </p>
+
+
+            <div class="flex space-x-6">
+
+                <a href="#home"
+                   class="hover:text-white transition-colors">
+
+                    <i class="fas fa-arrow-up"></i>
+
+                    Back to Top
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
+
+    <script>
+
+        /* Dynamic year */
+
+        document.getElementById('year').textContent =
+            new Date().getFullYear();
+
+
+        /* Mobile menu */
+
+        const btn = document.getElementById('mobile-menu-btn');
+
+        const menu = document.getElementById('mobile-menu');
+
+        const links = menu.querySelectorAll('a');
+
+
+        btn.addEventListener('click', () => {
+
+            menu.classList.toggle('hidden');
+
+        });
+
+
+        /* Close menu after clicking */
+
+        links.forEach(link => {
+
+            link.addEventListener('click', () => {
+
+                menu.classList.add('hidden');
+
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>
